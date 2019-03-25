@@ -1,7 +1,7 @@
 version: '3'
 
 services:
- postgresql:
+  postgresql:
     image: postgres:latest
     container_name: postgresql
     ports:
@@ -28,13 +28,3 @@ services:
       PGADMIN_DEFAULT_PASSWORD: root
     hostname: pgadmin4
     restart: always
-
-  db:
-    image: postgres:11.2
-    restart: always
-    environment:
-      - POSTGRES_DB=gitbucket
-      - POSTGRES_USER=gitbucket
-      - POSTGRES_PASSWORD=gitbucket
-    volumes:
-      - ./db:/var/lib/postgresql/data
